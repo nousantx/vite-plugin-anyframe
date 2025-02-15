@@ -6,7 +6,7 @@ export default {
       filename: 'plugin'
     },
     rollupOptions: {
-      external: ['node:fs', 'node:path', '@anyframe/core']
+      external: ['node:fs', 'node:path', '@anyframe/core', 'glob']
     }
   }
 }

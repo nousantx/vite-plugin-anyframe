@@ -5,8 +5,17 @@
   "type": "module",
   "license": "MIT",
   "author": "NOuSantx <nousantx@gmail.com>",
-  "keywords": ["vite", "vite-plugin", "css-framework"],
-  "files": ["dist", "README.md", "LICENSE","package.json"],
+  "keywords": [
+    "vite",
+    "vite-plugin",
+    "css-framework"
+  ],
+  "files": [
+    "dist",
+    "README.md",
+    "LICENSE",
+    "package.json"
+  ],
   "main": "./dist/vite-plugin-anyframe.js",
   "scripts": {
     "dev": "vite",

@@ -33,7 +33,7 @@ export default function ViteAnyFrame() {
       match[1]
         .split(/\s+/)
         .filter(Boolean)
-        .forEach(className => {
+        .forEach((className) => {
           classList.add(className)
         })
     }
@@ -56,13 +56,13 @@ export default function ViteAnyFrame() {
       if (id === resolvedVirtualId) return null
 
       const classList = scanClassNames(code)
-      classList.forEach(className => classSet.add(className))
+      classList.forEach((className) => classSet.add(className))
       return null
     },
 
     load(id) {
       const stylesheet = ui.create([...classSet])
-      console.log(classSet, stylesheet)
+
       if (id === resolvedVirtualId) {
         return stylesheet
       }
@@ -72,7 +72,7 @@ export default function ViteAnyFrame() {
     configureServer({ watcher, ws, moduleGraph, restart }) {
       watcher.add(configPath)
 
-      watcher.on('change', async file => {
+      watcher.on('change', async (file) => {
         if (file === configPath) {
           console.log('anyframe.config.js changed. Reloading configuration...')
           await loadConfig()
@@ -90,7 +90,7 @@ export default function ViteAnyFrame() {
           const classList = scanClassNames(code)
           let changed = false
 
-          classList.forEach(className => {
+          classList.forEach((className) => {
             if (!classSet.has(className)) {
               classSet.add(className)
               changed = true

@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-anyframe",
   "description": "AnyFrame integration vite.",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "type": "module",
   "license": "MIT",
   "author": "NOuSantx <nousantx@gmail.com>",
@@ -23,7 +23,8 @@
     "preview": "vite preview"
   },
   "peerDependencies": {
-    "@anyframe/core": "^0.1.0"
+    "@anyframe/core": "^0.1.0",
+    "glob": "^10.0.0"
   },
   "devDependencies": {
     "vite": "^6.1.0"

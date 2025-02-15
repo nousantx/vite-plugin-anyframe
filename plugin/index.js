@@ -53,10 +53,26 @@ export default function ViteAnyFrame() {
     },
 
     transform(code, id) {
-      if (id === resolvedVirtualId) return null
+      if (id === resolvedVirtualId || id.includes('\0') || id.startsWith('vite/')) return null
 
-      const classList = scanClassNames(code)
-      classList.forEach((className) => classSet.add(className))
+      if (
+        id.endsWith('.js') ||
+        id.endsWith('.jsx') ||
+        id.endsWith('.ts') ||
+        id.endsWith('.tsx') ||
+        id.endsWith('.vue')
+      ) {
+        try {
+          if (fs.existsSync(id)) {
+            const _code = fs.readFileSync(id, 'UTF-8')
+            if (id.endsWith('App.vue')) console.log(_code)
+            const classList = scanClassNames(_code)
+            classList.forEach((className) => classSet.add(className))
+          }
+        } catch (error) {
+          console.warn(`Failed to read file ${id}: ${error.message}`)
+        }
+      }
       return null
     },
 

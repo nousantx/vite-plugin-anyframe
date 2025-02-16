@@ -110,7 +110,6 @@ export default function ViteAnyFrame() {
     load(id) {
       if (id === resolvedVirtualId) {
         const stylesheet = ui.create([...classSet])
-        console.log(classSet, stylesheet)
         return stylesheet
       }
       return undefined

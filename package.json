@@ -1,7 +1,7 @@
 {
   "name": "vite-plugin-anyframe",
   "description": "AnyFrame integration vite.",
-  "version": "0.1.2",
+  "version": "0.1.3",
   "type": "module",
   "license": "MIT",
   "author": "NOuSantx <nousantx@gmail.com>",
